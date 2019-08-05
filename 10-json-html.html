@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Narrative</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+   
+</head>
+
+<style>
+    body{padding: 4%;}
+</style>
+
+<body>
+    
+    <h1>JSON HTML</h1>
+    <ul>
+      <li>JSON can very easily be translated into JavaScript.</li>
+      <li>JavaScript can be used to make HTML in your web pages.</li>
+    </ul>
+    
+    <hr>
+    
+    <h3>HTML Table</h3>
+    <p>Make an HTML table with data received as JSON:</p>
+    
+    
+        <h2>Make a table based on JSON data.</h2>
+
+        <p id="demo"></p>
+
+        <script>
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { "table":"customers", "limit":20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                txt += "<table border='1'>"
+                for (x in myObj) {
+                    txt += "<tr><td>" + myObj[x].name + "</td></tr>";
+                }
+                txt += "</table>"        
+                document.getElementById("demo").innerHTML = txt;
+            }
+        };
+        xmlhttp.open("POST", "demo_file_array.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("x=" + dbParam);
+
+        </script>
+    
+   <hr>
+   
+   <h2>Dynamic HTML Table</h2>
+    <p>Make the HTML table based on the value of a drop down menu:</p>
+    
+<h2>Make a table based on the value of a drop down menu.</h2>
+
+<select id="myselect" onchange="change_myselect(this.value)">
+<option value="">Choose an option:</option>
+<option value="customers">Customers</option>
+<option value="products">Products</option>
+<option value="suppliers">Suppliers</option>
+</select>
+
+
+<p id="demo1"></p>
+
+<script>
+function change_myselect(sel) {
+  var obj, dbParam, xmlhttp, myObj, x, txt = "";
+  obj = { "table":sel, "limit":20 };
+  dbParam = JSON.stringify(obj);
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+      txt += "<table border='1'>"
+      for (x in myObj) {
+        txt += "<tr><td>" + myObj[x].name + "</td></tr>";
+      }
+      txt += "</table>"        
+      document.getElementById("demo1").innerHTML = txt;
+    }
+  };
+  xmlhttp.open("POST", "demo_file_array.php", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("x=" + dbParam);
+}
+</script>
+
+       <hr>
+       
+       
+       <h2>HTML Drop Down List</h2>
+        <p>Make an HTML drop down list with data received as JSON:</p>
+
+       
+        <h2>Make a drop down list based on JSON data.</h2>
+
+        <p id="demo2"></p>
+
+        <script>
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { "table":"customers", "limit":20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                txt += "<select>"
+                for (x in myObj) {
+                    txt += "<option>" + myObj[x].name;
+                }
+                txt += "</select>"
+                document.getElementById("demo2").innerHTML = txt;
+            }
+        };
+        xmlhttp.open("POST", "demo_file_array.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("x=" + dbParam);
+
+        </script>
+
+
+   
+    
+    <script src="js/jquery.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script> 
+    
+        
+<script>
+
+            
+    </script>
+ 
+</body>
+</html>

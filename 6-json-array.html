@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Narrative</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+   
+</head>
+
+<style>
+    body{padding: 4%;}
+</style>
+
+<body>
+    
+    <h1>JSON Arrays</h1>
+    <p>Example[ "Ford", "BMW", "Fiat" ]</p>
+    
+    <ul>
+      <li>Arrays in JSON are almost the same as arrays in JavaScript.</li>
+      <li>In JSON, array values must be of type string, number, object, array, boolean or null.</li>
+      <li>In JavaScript, array values can be all of the above, plus any other valid JavaScript expression, including functions, dates, and undefined.</li>
+    </ul>
+    
+    <hr>
+    
+    <h3>Arrays in JSON Objects</h3>
+    <p>Arrays can be values of an object property:</p>
+    {"name":"John","age":30,"cars":[ "Ford", "BMW", "Fiat" ]}
+    
+   <hr>
+   
+   <h3>Accessing Array Values</h3>
+    <p>You access the array values by using the index number:</p>
+
+    <p>Access an array value of a JSON object.</p>
+
+    <p id="demo"></p>
+    <script>
+    var myObj, x;
+    myObj = {
+        "name":"John",
+        "age":30,
+        "cars":[ "Ford", "BMW", "Fiat" ]
+    };
+    x = myObj.cars[0];
+    document.getElementById("demo").innerHTML = x;
+
+    </script>
+    
+    <hr>
+    
+    <h3>Looping Through an Array</h3>
+    <p>You can access array values by using a for-in loop:</p>
+
+        <p>Looping through an array using a for in loop:</p>
+
+        <p id="demo1"></p>
+
+        <script>
+
+        var myObj, i, x = "";
+        myObj = {
+            "name":"John",
+            "age":30,
+            "cars":[ "Ford", "BMW", "Fiat" ]
+        };
+
+        for (i in myObj.cars) {
+            x += myObj.cars[i] + "<br>";
+        }
+        
+        /*for (i = 0; i < myObj.cars.length; i++) {
+            x += myObj.cars[i];
+        }*/
+
+        document.getElementById("demo1").innerHTML = x;
+
+        </script>
+    
+     <hr>
+    
+      <h3>Nested Arrays in JSON Objects</h3>
+    <p>Values in an array can also be another array, or even another JSON object:</p>
+
+
+        <p>Looping through arrays inside arrays.</p>
+
+        <p id="demo2"></p>
+
+        <script>
+        var myObj, i, j, x = "";
+        myObj = {
+            "name":"John",
+            "age":30,
+            "cars": [
+                { "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] },
+                { "name":"BMW", "models":[ "320", "X3", "X5" ] },
+                { "name":"Fiat", "models":[ "500", "Panda" ] }
+            ]
+        }
+
+        for (i in myObj.cars) {
+            x += "<h2>" + myObj.cars[i].name + "</h2>";
+            for (j in myObj.cars[i].models) {
+                x += myObj.cars[i].models[j] + "<br>";
+            }
+        }
+        document.getElementById("demo2").innerHTML = x;
+    </script>
+    
+    <hr>
+    
+    <h3>Modify Array Values</h3>
+    <p>Use the index number to modify an array:</p>
+    
+
+    <p>How to modify an array value of a JSON object.</p>
+
+    <p id="demo"></p>
+
+    <script>
+
+    var myObj, i, x = "";
+    myObj = {
+        "name":"John",
+        "age":30,
+        "cars":[ "Ford", "BMW", "Fiat" ]
+    };
+    myObj.cars[1] = "Mercedes";
+     // myObj.cars[1];
+
+    for (i in myObj.cars) {
+        x += myObj.cars[i] + "<br>";
+    }
+
+    document.getElementById("demo4").innerHTML = x;
+
+    </script>
+    
+    <script src="js/jquery.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script> 
+    
+        
+<script>
+
+            
+    </script>
+ 
+</body>
+</html>

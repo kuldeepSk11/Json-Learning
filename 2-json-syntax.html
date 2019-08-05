@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Narrative</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+   
+</head>
+
+<style>
+    body{padding: 4%;}
+</style>
+
+<body>
+    
+    <h1>JSON - Syntax</h1>
+    <p>The JSON syntax is a subset of the JavaScript syntax.</p>
+    
+    <h2>JSON Syntax Rules</h2>
+    <p>SON syntax is derived from JavaScript object notation syntax</p>
+    
+   <ul>
+      <li>Data is in name/value pairs</li>
+      <li>Data is separated by commas</li>
+      <li>Curly braces hold objects</li>
+      <li>Square brackets hold arrays</li>
+    </ul>
+   
+    <hr>
+    
+    <h2>JSON Data - A Name and a Value</h2>
+    
+    <p>JSON data is written as name/value pairs.<br>
+A name/value pair consists of a field name (in double quotes), followed by a colon, followed by a value:</p>
+   
+   "name":"John"
+   <p>JSON names require double quotes. JavaScript names don't.</p>
+    
+    <hr>
+    
+    <h3>JSON - Evaluates to JavaScript Objects</h3>
+    <p>The JSON format is almost identical to JavaScript objects.<br>
+In JSON, keys must be strings, written with double quotes:</p>
+ <span>JSON</span> { "name":"John" } 
+<p>In JavaScript, keys can be strings, numbers, or identifier names:</p>
+<span>JavaScript</span>{ name:"John" }
+    <hr>
+    
+    <h3>JSON Values</h3>
+    <p>In JSON, values must be one of the following data types:</p>
+   <ul>
+      <li>a string</li>
+      <li>a number</li>
+      <li>an object (JSON object)</li>
+      <li>an array</li>
+      <li>a boolean</li>
+      <li>null</li>
+    </ul>
+    
+    <p>In JavaScript values can be all of the above, plus any other valid JavaScript expression, including:</p>
+    <ul>
+      <li>a function</li>
+      <li>a date</li>
+      <li>undefined</li>
+    </ul>
+    <br>
+    <p>In JSON, string values must be written with double quotes:</p>
+    
+    <span>JSON</span>{ "name":"John" }
+    <br>
+    
+    <p>In JavaScript, you can write string values with double or single quotes:</p>
+    
+    <span>JavaScript</span>{ name:'John' }
+    
+    <hr>
+    
+    <h3>JSON Uses JavaScript Syntax</h3>
+<p>Because JSON syntax is derived from JavaScript object notation, very little extra software is needed to work with JSON within JavaScript.<br>
+With JavaScript you can create an object and assign data to it, like this:
+</p>
+
+    <span>Example</span>var person = { "name":"John", "age":31, "city":"New York" };
+    <p>You can access a JavaScript object like this:</p>
+        
+    <p>Access a JavaScript object:</p>
+    <p id="demo"></p>
+    <script>
+    var myObj, x;
+    myObj = { "name":"John", "age":30, "city":"New York" };
+    x = myObj.name;
+    document.getElementById("demo").innerHTML = x;
+    </script>
+       
+       <hr>
+        
+        <p>Modify a JavaScript object:</p>
+
+        <p id="demo1"></p>
+
+        <script>
+        var myObj, x;
+        myObj = { "name":"John", "age":30, "city":"New York" };
+        myObj.name = "Gilbert";
+        document.getElementById("demo1").innerHTML = myObj.name;
+        </script>
+        
+        <hr>
+        
+        <h3>JavaScript Arrays as JSON</h3>
+       <p>The same way JavaScript objects can be used as JSON, JavaScript arrays can also be used as JSON.</p>
+       <h3>JSON Files</h3>
+       <ul>
+        <li>The file type for JSON files is ".json"</li>
+        <li>The MIME type for JSON text is "application/json"</li>
+        </ul>
+    <script src="js/jquery.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script> 
+    
+        
+<script>
+
+            
+    </script>
+ 
+</body>
+</html>

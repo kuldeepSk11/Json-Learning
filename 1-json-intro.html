@@ -1,0 +1,129 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Narrative</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+   
+</head>
+
+<style>
+    body{padding: 4%;}
+</style>
+
+<body>
+    
+    <h1>JSON - Introduction</h1>
+    <div>
+    <p>JSON is a syntax for storing and exchanging data.</p>
+    <p>JSON is text, written with JavaScript object notation.</p>
+    </div>
+    
+    <ul>
+      <li>JSON stands for <b>J</b>ava<b>S</b>cript <b>O</b>bject <b>N</b>otation</li>
+      <li>JSON is a lightweight data-interchange format</li>
+      <li>JSON is "self-describing" and easy to understand</li>
+      <li>JSON is language independent <b>*</b></li>
+    </ul>
+    
+    <p>JSON uses JavaScript syntax, but the JSON format is text only.
+Text can be read and used as a data format by any programming language.</p>
+   
+   <h2>Why use JSON?</h2>
+   <p>Since the JSON format is text only, it can easily be sent to and from a server, and used as a data format by any programming language.<br>
+
+JavaScript has a built in function to convert a string, written in JSON format, into native JavaScript objects:<br>
+
+JSON.parse()<br>
+
+So, if you receive data from a server, in JSON format, you can use it like any other JavaScript object.</p>
+    
+    <hr>
+    
+    <h2>Exchanging Data</h2>
+    
+    <p>When exchanging data between a browser and a server, the data can only be text.<br>
+    JSON is text, and we can convert any JavaScript object into JSON, and send JSON to the server.<br>
+    We can also convert any JSON received from the server into JavaScript objects.<br>
+    This way we can work with the data as JavaScript objects, with no complicated parsing and translations.
+    </p>
+    
+    <hr>
+    
+    <h3>Sending Data</h3>
+    <p>If you have data stored in a JavaScript object, you can convert the object into JSON, and send it to a server:</p>
+   
+<p>Convert a JavaScript object into a JSON string, and send it to the server.</p>
+
+<p id="test"></p>
+
+<script>
+var myObj = { "name":"John", "age":31, "city":"New York" };
+var myJSON = JSON.stringify(myObj);
+    document.getElementById("test").innerHTML= myJSON;
+//window.location = "demo_json.php?x=" + myJSON;
+
+</script>
+    
+    <p>You will learn more about the JSON.stringify() function later in this tutorial.</p>
+    
+    <hr>
+    
+    <h3>Receiving Data</h3>
+    <p>If you receive data in JSON format, you can convert it into a JavaScript object:</p>
+    
+<p>Convert a string written in JSON format, into a JavaScript object.</p>
+
+<p id="demo"></p>
+
+<script>
+
+var myJSON = '{ "name":"John", "age":31, "city":"New York" }';
+var myObj = JSON.parse(myJSON);
+document.getElementById("demo").innerHTML = myObj.name;
+
+</script>
+    
+    <hr>
+    
+    <h3>Storing Data</h3>
+<p>When storing data, the data has to be a certain format, and regardless of where you choose to store it, text is always one of the legal formats.<br>
+JSON makes it possible to store JavaScript objects as text.
+</p>
+    
+<p>Store and retrieve data from local storage.</p>
+
+<p id="demo1"></p>
+
+<script>
+var myObj, myJSON, text, obj;
+
+//Storing data:
+myObj = { "name":"kuldeep", "age":31, "city":"New York" };
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+
+//Retrieving data:
+text = localStorage.getItem("testJSON");
+obj = JSON.parse(text);
+document.getElementById("demo1").innerHTML = obj.name + obj.age + obj.city;
+</script>
+    
+    
+
+    <script src="js/jquery.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script> 
+    
+        
+<script>
+
+            
+    </script>
+ 
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Narrative</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+   
+</head>
+
+<style>
+    body{padding: 4%;}
+</style>
+
+<body>
+    
+    <h1>JSON vs XML</h1>
+    <p>Both JSON and XML can be used to receive data from a web server.<br>
+The following JSON and XML examples both defines an employees object, with an array of 3 employees:</p>
+    
+    <hr>
+    <p>
+        JSON Example
+        {"employees":[
+            { "firstName":"John", "lastName":"Doe" },
+            { "firstName":"Anna", "lastName":"Smith" },
+            { "firstName":"Peter", "lastName":"Jones" }
+        ]}
+    </p>
+    
+    <hr>
+    
+    <p>XML Example
+        "<employees>
+            <employee>
+                <firstName>John</firstName> <lastName>Doe</lastName>
+            </employee>
+            <employee>
+                <firstName>Anna</firstName> <lastName>Smith</lastName>
+            </employee>
+            <employee>
+                <firstName>Peter</firstName> <lastName>Jones</lastName>
+            </employee>
+        </employees>"
+  </p>
+   
+    <hr>
+    
+    <h3>JSON is Like XML Because</h3>
+    
+    <ul>
+  <li>Both JSON and XML are "self describing" (human readable)</li>
+  <li>Both JSON and XML are hierarchical (values within values)</li>
+  <li>Both JSON and XML can be parsed and used by lots of programming languages</li>
+  <li>Both JSON and XML can be fetched with an XMLHttpRequest </li>
+</ul>
+    
+    <hr>
+    
+    <h3>JSON is Unlike XML Because</h3>
+    
+    <ul>
+  <li>JSON doesn't use end tag</li>
+  <li>JSON is shorter</li>
+  <li>JSON is quicker to read and write</li>
+  <li>JSON can use arrays</li>
+</ul>
+   <p>XML has to be parsed with an XML parser. JSON can be parsed by a standard JavaScript function.</p>
+   
+   <hr>
+   <h3>Why JSON is Better Than XML</h3>
+    <p>XML is much more difficult to parse than JSON.<br>
+    JSON is parsed into a ready-to-use JavaScript object.</p>
+    
+    <p>For AJAX applications, JSON is faster and easier than XML:</p>
+    
+    <h4>Using XML</h4>
+    <ul>
+      <li>Fetch an XML document</li>
+      <li>Use the XML DOM to loop through the document</li>
+      <li>Extract values and store in variables</li>
+    </ul>
+    
+    <h4>Using JSON</h4>
+    <ul>
+      <li>Fetch a JSON string</li>
+      <li>JSON.Parse the JSON string</li>
+    </ul>
+    
+    <script src="js/jquery.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script> 
+    
+        
+<script>
+
+            
+    </script>
+ 
+</body>
+</html>
